@@ -31,9 +31,9 @@ namespace Lab1
             }
 
 
-            /*foreach (TodoItem t in items)
+            /*foreach (TodoItem item in items)
             {
-                TodoItemDto fillingItemDto = new TodoItemDto(t);
+                TodoItemDto fillingItemDto = new TodoItemDto(item);
                 itemDtos.Add(fillingItemDto);
             }*/
 
