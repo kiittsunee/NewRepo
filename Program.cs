@@ -13,7 +13,7 @@ namespace Lab1
 
         static void Main(string[] args)
         {
-            List<TodoItemDTO> itemDTOs = new List<TodoItemDTO>();//лист, который нужно заполнить обьектами из другого листа 
+            List<TodoItemDTO> itemDtos = new List<TodoItemDTO>();//лист, который нужно заполнить обьектами из другого листа 
             List<TodoItem> items = new List<TodoItem>(); //другой лист
             items.Add(new TodoItem() { Id = 1, Name = "test_1", IsComplete = false, Secret = "secret_1" });
             items.Add(new TodoItem() { Id = 2, Name = "test_2", IsComplete = false, Secret = "secret_2" });
@@ -32,10 +32,10 @@ namespace Lab1
             }*/
             for (int i = 0; i < items.Count; i++)
             {
-                TodoItemDTO fillingItemDTOs = new TodoItemDTO(items[i]);
-                itemDTOs.Add(fillingItemDTOs);
+                TodoItemDTO fillingItemDto = new TodoItemDTO(items[i]);
+                itemDtos.Add(fillingItemDto);
             }
-            foreach (TodoItemDTO e in itemDTOs)
+            foreach (TodoItemDTO e in itemDtos)
             {
                // Console.WriteLine($"Id: {e.Id} - Name: {e.Name} - IsComplete: {e.IsComplete} ");
                 Console.WriteLine($"{JsonSerializer.Serialize(e).ToString()}");
