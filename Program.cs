@@ -13,29 +13,37 @@ namespace Lab1
 
         static void Main(string[] args)
         {
-            List<TodoItemDTO> itemDtos = new List<TodoItemDTO>();//лист, который нужно заполнить обьектами из другого листа 
-            List<TodoItem> items = new List<TodoItem>(); //другой лист
+            // Лист, который нужно заполнить обьектами из другого листа.
+            List<TodoItemDto> itemDtos = new List<TodoItemDto>();
+
+            // Другой лист.
+            List<TodoItem> items = new List<TodoItem>(); 
+
+            // Заполнение листа.
             items.Add(new TodoItem() { Id = 1, Name = "test_1", IsComplete = false, Secret = "secret_1" });
             items.Add(new TodoItem() { Id = 2, Name = "test_2", IsComplete = false, Secret = "secret_2" });
             items.Add(new TodoItem() { Id = 3, Name = "test_3", IsComplete = false, Secret = "secret_3" });
             items.Add(new TodoItem() { Id = 4, Name = "test_4", IsComplete = false, Secret = "secret_4" });
-           /* foreach (TodoItem e in lst)
+
+            foreach (TodoItem e in items)
             {
                 Console.WriteLine($"Id: {e.Id} - Name: {e.Name} - IsComplete: {e.IsComplete} - Secret: {e.Secret}");
             }
 
 
-            foreach (TodoItem t in lst)
+            /*foreach (TodoItem t in items)
             {
-                TodoItemDTO example = new TodoItemDTO(t);
-                lst2.Add(example);
+                TodoItemDto fillingItemDto = new TodoItemDto(t);
+                itemDtos.Add(fillingItemDto);
             }*/
-            for (int i = 0; i < items.Count; i++)
+
+            for (var i = 0; i < items.Count; i++)
             {
-                TodoItemDTO fillingItemDto = new TodoItemDTO(items[i]);
+                TodoItemDto fillingItemDto = new TodoItemDto(items[i]);
                 itemDtos.Add(fillingItemDto);
             }
-            foreach (TodoItemDTO e in itemDtos)
+
+            foreach (TodoItemDto e in itemDtos)
             {
                // Console.WriteLine($"Id: {e.Id} - Name: {e.Name} - IsComplete: {e.IsComplete} ");
                 Console.WriteLine($"{JsonSerializer.Serialize(e).ToString()}");

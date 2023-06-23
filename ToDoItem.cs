@@ -5,20 +5,20 @@ using System.Threading.Tasks;
 
 namespace Lab1
 {
-    public class TodoItemDTO
+    public class TodoItemDto
     {
         public long Id { get; set; }
         public string? Name { get; set; }
         public bool IsComplete { get; set; }
 
-        public TodoItemDTO (TodoItem todoItem)
+        public TodoItemDto (TodoItem todoItem)
         {
             Id = todoItem.Id;
             Name = todoItem.Name;
             IsComplete = todoItem.IsComplete;
        }
 
-        public TodoItemDTO()
+        public TodoItemDto()
         {
         }
     }
