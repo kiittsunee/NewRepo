@@ -18,9 +18,7 @@ namespace Lab1
             IsComplete = todoItem.IsComplete;
        }
 
-        public TodoItemDto()
-        {
-        }
+        public TodoItemDto(){}
     }
     public class TodoItem
     {

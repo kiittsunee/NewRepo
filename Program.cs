@@ -25,9 +25,9 @@ namespace Lab1
             items.Add(new TodoItem() { Id = 3, Name = "test_3", IsComplete = false, Secret = "secret_3" });
             items.Add(new TodoItem() { Id = 4, Name = "test_4", IsComplete = false, Secret = "secret_4" });
 
-            foreach (TodoItem e in items)
+            foreach (TodoItem item in items)
             {
-                Console.WriteLine($"Id: {e.Id} - Name: {e.Name} - IsComplete: {e.IsComplete} - Secret: {e.Secret}");
+                Console.WriteLine($"Id: {item.Id} - Name: {item.Name} - IsComplete: {item.IsComplete} - Secret: {item.Secret}");
             }
 
 
@@ -43,10 +43,10 @@ namespace Lab1
                 itemDtos.Add(fillingItemDto);
             }
 
-            foreach (TodoItemDto e in itemDtos)
+            foreach (TodoItemDto item in itemDtos)
             {
                // Console.WriteLine($"Id: {e.Id} - Name: {e.Name} - IsComplete: {e.IsComplete} ");
-                Console.WriteLine($"{JsonSerializer.Serialize(e).ToString()}");
+                Console.WriteLine($"{JsonSerializer.Serialize(item).ToString()}");
             }
         }
     }
